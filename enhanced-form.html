@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>enhanced-form.html (Simplified)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background:#f9f9f9; }
+    header, main, footer { max-width: 800px; margin: 0 auto; padding: 16px; }
+    header { background:#fff; border-bottom:1px solid #ccc; }
+    nav a { margin-right: 12px; }
+    h1, h2 { margin-top: 0; }
+    section, article { background:#fff; border:1px solid #ddd; padding:16px; margin:16px 0; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border:1px solid #ccc; padding:8px; }
+    thead th { background:#eef; }
+    form { display: grid; gap: 16px; }
+    fieldset { border:1px solid #ccc; padding:12px; }
+    legend { font-weight: bold; }
+    .field { display: grid; gap: 6px; margin-bottom: 10px; }
+    label { font-weight: 600; }
+    input, select, textarea { padding:8px; border:1px solid #bbb; border-radius:4px; width:100%; max-width: 400px; }
+    input[type="checkbox"], input[type="radio"] { width:auto; }
+    .actions { display:flex; gap:10px; }
+    input[type="submit"], input[type="reset"] { padding:8px 12px; border:1px solid #0a66c2; background:#0a66c2; color:#fff; border-radius:4px; cursor:pointer; }
+    .secondary { background:#fff; color:#0a66c2; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTML5 Content & Forms</h1>
+    <nav>
+      <a href="#content">Content</a>
+      <a href="#form">Form</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Content -->
+    <section id="content">
+      <h2>Examples of Lists, Tables, and Media</h2>
+
+      <article>
+        <h3>Lists</h3>
+        <h4>Unordered List</h4>
+        <ul>
+          <li>Attend all classes</li>
+          <li>Complete assignments on time</li>
+          <li>Ask questions in class</li>
+        </ul>
+
+        <h4>Ordered List</h4>
+        <ol>
+          <li>Register for the course</li>
+          <li>Read the syllabus</li>
+          <li>Start first assignment</li>
+        </ol>
+
+        <h4>Description List</h4>
+        <dl>
+          <dt>HTML</dt>
+          <dd>HyperText Markup Language, the standard for web pages</dd>
+          <dt>CSS</dt>
+          <dd>Cascading Style Sheets, used for styling web pages</dd>
+        </dl>
+      </article>
+
+      <article>
+        <h3>Image</h3>
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg"
+               alt="HTML5 badge logo" width="150" height="150">
+          <figcaption>Figure 1: HTML5 Logo</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h3>Table</h3>
+        <table>
+          <caption>Class Schedule</caption>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Topic</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>Introduction to HTML</td>
+              <td>Lecture</td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td>Working with Forms</td>
+              <td>Workshop</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>Tables and Media</td>
+              <td>Lab</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <!-- Form -->
+    <section id="form">
+      <h2>Student Registration Form</h2>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div class="field">
+            <label for="first">First Name *</label>
+            <input id="first" name="first" type="text" placeholder="John" required minlength="2">
+          </div>
+          <div class="field">
+            <label for="last">Last Name *</label>
+            <input id="last" name="last" type="text" placeholder="Doe" required minlength="2">
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Address</legend>
+          <div class="field">
+            <label for="street">Street Address *</label>
+            <input id="street" name="street" type="text" required>
+          </div>
+          <div class="field">
+            <label for="city">City *</label>
+            <input id="city" name="city" type="text" required>
+          </div>
+          <div class="field">
+            <label for="country">Country *</label>
+            <select id="country" name="country" required>
+              <option value="">Choose…</option>
+              <option>Ethiopia</option>
+              <option>Kenya</option>
+              <option>Nigeria</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences</legend>
+          <div class="field">
+            <label>Preferred Contact Method</label>
+            <label><input type="radio" name="contact" value="email" checked> Email</label>
+            <label><input type="radio" name="contact" value="phone"> Phone</label>
+          </div>
+          <div class="field">
+            <label>Topics of Interest</label>
+            <label><input type="checkbox" name="topics" value="html"> HTML</label>
+            <label><input type="checkbox" name="topics" value="css"> CSS</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Other</legend>
+          <div class="field">
+            <label for="dob">Date of Birth *</label>
+            <input id="dob" name="dob" type="date" required>
+          </div>
+          <div class="field">
+            <label for="resume">Upload Résumé *</label>
+            <input id="resume" name="resume" type="file" accept=".pdf,image/*" required>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Confirmation</legend>
+          <label><input type="checkbox" required> I confirm this is my own work *</label>
+        </fieldset>
+
+        <div class="actions">
+          <input type="submit" value="Submit">
+          <input type="reset" value="Reset" class="secondary">
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p><small>&copy; 2025 Class Project</small></p>
+  </footer>
+</body>
+</html>
